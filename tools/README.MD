@@ -4,6 +4,7 @@
 uv venv --python 3.11
 # 或者直接指定Python解释器路径（如果3.11已安装）
 uv venv --python python3.11
+source .venv/bin/activate
 uv pip install rknn-toolkit2 -i https://pypi.mirrors.ustc.edu.cn/simple/
 uv pip install -r requirements.txt -i https://pypi.mirrors.ustc.edu.cn/simple/
 ```
