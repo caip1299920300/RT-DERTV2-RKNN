@@ -13,6 +13,7 @@ DEFAULT_QUANT = False
 quantized_algorithm='normal'          # 使用MMSE算法提高量化精度： normal 、 kl_divergence 、 mmse
 DEFAULT_IMAGE_PATH = 'datas/1920_1080.jpeg'  # 默认测试图片路径
 DEFAULT_OUTPUT_IMAGE_PATH = 'result_detection.jpg'  # 默认输出图片路径
+confidence_threshold = 0.5 # 置信度过滤
 
 # COCO数据集类别名称（80类）
 COCO_CLASSES = [
@@ -230,9 +231,6 @@ def print_inference_results(outputs_data, original_img=None, save_path=None):
     打印推理结果（COCO数据集版本）
     """
     print('--> Inference results:')
-    
-    # 置信度过滤
-    confidence_threshold = 0.5
     
     # 打印所有输出的基本信息
     for i, output in enumerate(outputs_data):
